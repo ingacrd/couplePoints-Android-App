@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "148822038745",
+    "firebase_url": "https://couplepoints-2f1a7-default-rtdb.firebaseio.com",
+    "project_id": "couplepoints-2f1a7",
+    "storage_bucket": "couplepoints-2f1a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148822038745:android:7f7b73d558fdb4f0eb86c8",
+        "android_client_info": {
+          "package_name": "com.example.finalproject_couplepoints"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWg5NNlrXrBdPFPViWv2KO_8CYXwOtm3o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
