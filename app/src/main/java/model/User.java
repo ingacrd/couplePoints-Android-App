@@ -4,16 +4,25 @@ public class User {
     private int id;
     private String email;
     private String name;
-//    private String password;
+    private String password;
     private String photo;
     private int points;
 
-    public User(int id, String email, String name, String photo, int points) {
+    public User(int id, String email, String name,String password, String photo, int points) {
         this.id = id;
         this.email = email;
         this.name = name;
+        this.password = password;
         this.photo = photo;
         this.points = points;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public int getId() {
