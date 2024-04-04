@@ -8,13 +8,13 @@ public class User {
     private String photo;
     private int points;
 
-    public User(int id, String email, String name, String password, String photo, int points) {
+
+    public User(int id, String email, String name, String password) {
         this.id = id;
         this.email = email;
         this.name = name;
         this.password = password;
-        this.photo = photo;
-        this.points = points;
+        this.points = 0;
     }
 
     public String getPassword() {
