@@ -17,6 +17,12 @@ public class User {
         this.points = 0;
     }
 
+    //Constructor to create/invite couple to registration
+    public User(int id, String email){
+        this.id = id;
+        this.email = email;
+    }
+
     public String getPassword() {
         return password;
     }
