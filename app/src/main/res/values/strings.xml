@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">FinalProject_CouplePoints</string>
+    <string name="your_profile">Your Profile</string>
+    <string name="user_picture">User Picture</string>
+    <string name="name">Name</string>
+    <string name="e_mail">E-mail</string>
+    <string name="edit_image_pencil">Edit Image Pencil</string>
+
+
+
+
+    <string-array name="numbers_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <!-- Add more numbers as needed -->
+    </string-array>
 </resources>

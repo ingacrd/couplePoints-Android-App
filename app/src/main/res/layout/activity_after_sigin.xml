@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/purple">
+    <include layout="@layout/menu_bar_with_logo"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="15dp">
+        <ImageView
+            android:id="@+id/class_shape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/profile"/>
+
+        <TextView
+            android:id="@+id/class_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Points calculation"
+            android:fontFamily="@font/montserrat_alternates_extra_bold"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:ellipsize="end"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayoutPoint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="fixed"
+            app:tabGravity="fill"
+            android:background="@color/voilet"
+            app:tabTextColor="@color/black"
+            app:tabSelectedTextColor="@color/lightGray"
+            app:tabIndicatorColor="@color/veryDarkGreen"
+            app:tabIndicatorFullWidth="true">
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Give Points" />
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reedem Points"/>
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="History"/>
+        </com.google.android.material.tabs.TabLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@android:dimen/app_icon_size">
+
+            <ImageView
+                android:id="@+id/user1img"
+                android:src="@drawable/white_heart"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="70sp"
+                />
+
+            <TextView
+                android:id="@+id/user1"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/montserrat_alternates_extra_bold"
+                android:maxLines="1"
+                android:text="Player_points"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+
+            <ImageView
+                android:id="@+id/user2img"
+                android:src="@drawable/white_heart"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="70sp"
+                />
+
+            <TextView
+                android:id="@+id/user2"
+                android:layout_width="295dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/montserrat_alternates_extra_bold"
+                android:maxLines="1"
+                android:text="Partners_points"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
