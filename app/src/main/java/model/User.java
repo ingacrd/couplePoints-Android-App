@@ -21,6 +21,10 @@ public class User {
         this.couple_id = couple_id;
         this.operation = operation;
     }
+    public void addOperation(Operation operation){
+        this.operation.add(operation);
+
+    }
     public int getCouple_id() {
         return couple_id;
     }

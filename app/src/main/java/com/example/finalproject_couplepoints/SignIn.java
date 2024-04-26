@@ -19,6 +19,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import model.User;
+
 
 public class SignIn extends AppCompatActivity implements View.OnClickListener, ValueEventListener, ChildEventListener {
 
@@ -84,11 +86,14 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener, V
     public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
         if(snapshot.exists()){
+            int userId = Integer.parseInt(snapshot.getKey());
+
             String password = snapshot.child("password").getValue().toString();
             String passwordInput = edPassword.getText().toString();
 
             if (password.equals(passwordInput)) {
                 Intent intent = new Intent(SignIn.this, AfterSignIn.class);
+                intent.putExtra("userId", userId);
                 startActivity(intent);
             } else {
                 Toast.makeText(SignIn.this, "Invalid email or password", Toast.LENGTH_LONG).show();
