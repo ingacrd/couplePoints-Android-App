@@ -57,7 +57,7 @@
         android:layout_height="450dp" />
 
     <Button
-        android:id="@+id/btnBack"
+        android:id="@+id/btnBackfromHistory"
         android:layout_width="224dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -67,5 +67,4 @@
         android:text="Back"
         android:textSize="18dp"
         android:layout_marginLeft="80dp"/>
-
 </LinearLayout>

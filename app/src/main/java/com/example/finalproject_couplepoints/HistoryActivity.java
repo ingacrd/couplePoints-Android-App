@@ -1,12 +1,16 @@
 package com.example.finalproject_couplepoints;
 
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -23,20 +27,21 @@ import model.Operation;
 import model.OperationAdapter;
 import model.User;
 
-public class HistoryActivity extends AppCompatActivity implements ChildEventListener {
+public class HistoryActivity extends AppCompatActivity implements ChildEventListener, View.OnClickListener {
 
     ListView lvOperation;
+    Button btnBackfromHistory;
     //TextView tvTitle;
     ArrayList<User> userList;
     ArrayList<Operation> operationList;
-    //ArrayAdapter<User> userAdapter;
+    ArrayAdapter<User> userAdapter;
 
     OperationAdapter operationAdapter;
     DatabaseReference userDatabase;
 
-    //ActivityResultLauncher actResLauncher;
+    ActivityResultLauncher actResLauncher;
 
-    int currentUserId = 102; //    TODO: currentUserId comes from login
+    int userId; //    TODO: currentUserId comes from login
 
 
     @Override
@@ -48,7 +53,9 @@ public class HistoryActivity extends AppCompatActivity implements ChildEventList
 
     private void initialize() {
         //tvTitle = findViewById(R.id.tvTitle);
-
+        userId = getIntent().getIntExtra("userId", 0);
+        btnBackfromHistory = findViewById(R.id.btnBackfromHistory);
+        btnBackfromHistory.setOnClickListener(this);
         userDatabase = FirebaseDatabase.getInstance().getReference("User");
 
         lvOperation = findViewById(R.id.lvOperation);
@@ -60,9 +67,9 @@ public class HistoryActivity extends AppCompatActivity implements ChildEventList
         //userAdapter = new ArrayAdapter<User>(this, android.R.layout.simple_list_item_1,
         //userList);
         operationAdapter = new OperationAdapter(this, operationList);
-
-
         lvOperation.setAdapter(operationAdapter);
+        //lvOperation.setAdapter(userAdapter);
+
 
     }
 
@@ -71,14 +78,14 @@ public class HistoryActivity extends AppCompatActivity implements ChildEventList
         User user = snapshot.getValue(User.class);
         userList.add(user);
         for (User u : userList) {
-            if (u.getId() == currentUserId) {
+            if (u.getId() == userId) {
                 operationList.clear();
                 operationList.addAll(u.getOperation());
                 break; // Break out of the loop since we found the user
             }
         }
         operationAdapter.notifyDataSetChanged();
-
+        //userAdapter.notifyDataSetChanged();
         // Logging all operations in operationList
         if (operationList != null) {
             for (Operation operation : operationList) {
@@ -109,5 +116,16 @@ public class HistoryActivity extends AppCompatActivity implements ChildEventList
     @Override
     public void onCancelled(@NonNull DatabaseError error) {
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+
+        if (id == R.id.btnBackfromHistory){
+
+            Intent intent = new Intent(this, AfterSignIn.class);
+            startActivity(intent);
+        }
     }
 }
